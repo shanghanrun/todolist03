@@ -1,0 +1,49 @@
+body{
+    margin:0;
+    background-image: url('image/man.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    min-height: 100vh;
+    background-color: rgb(255, 251, 251, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        /* 위 아래쪽에 백그라운드가 보이게 하기  위해 */
+        margin: 100px;
+        margin-right: 200px;
+        border-radius: 20px;
+}
+input{
+    height:40px;
+    width: 400px;
+    border-radius: 8px;
+}
+#add{
+    margin: 10px;
+    height:  40px;
+    width: 40px;
+    border-radius: 50px;
+}
+.task-area{
+ margin-top: 10px;
+ margin-bottom: 10px;
+ border: 2px solid lightgray;
+ position: relative;
+}
+
+.tabs{
+    display: flex;
+    justify-content: column;
+}
+.tab{
+    padding: 1em;
+}
+#shadow{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 1;
+    background-color: green;
+    transition: 0.4s;
+    z-index: -1;
+}

@@ -63,17 +63,14 @@ input{
     border-radius: 10px;
     padding: 2px;
 }
-.task-tabs{
-    display: flex;
-    justify-content: column;
-    border-bottom: 1px solid lightgray;
-    position: relative;
-    margin-bottom: 10px;
-}
 
 .tabs{
     display: flex;
     justify-content: column;
+    position:relative;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+    margin-bottom: 10px;
 
 }
 .tab{

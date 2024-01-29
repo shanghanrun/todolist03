@@ -14,7 +14,7 @@ function indicator(e){
     shadow.style.width = target.offsetWidth +px;
 
     // 표시영역을 세로방향으로 더 넓히기
-    shadow.style.height = '40px';
+    shadow.style.height = '70px';
     shadow.style.top = target.offsetTop +10+px;
 
     //탭을 눌렀을 때, 화면랜더링
@@ -94,7 +94,7 @@ function renderList(){
     //리스트를 바탕으로 ul태그 밑에 li태그 생성
     todoList.forEach( (todo)=>{
         const liTag = document.createElement('li');
-        liTag.classList.add('todos');
+        liTag.classList.add('todo');
         if(todo.class == 'completed'){
             liTag.classList.add('completed');
         }
@@ -184,10 +184,13 @@ function onDeleteClick(e){
 
 function render(type){
     if (type == 'all'){
+        console.log('모두 타입 랜더링')
         renderList();
     } else if(type =='done'){
+        console.log('완료 타입 랜더링')
         renderSpecificList('done');
     } else if (type == 'ongoing'){
+        console.log('진행중 타입 랜더링')
         renderSpecificList('ongoing');
     }
 }
@@ -196,25 +199,24 @@ function renderSpecificList(type){
     let list;
     if (type =='done') list = doneList;
     if (type =='ongoing') list = ongoingList;
-
-    // 기존 ul태그가 있다면 제거
-    const oldUlTag = task.querySelector('ul');
-    if(oldUlTag){
-        oldUlTag.remove();
-        //혹은 task.remove(oldUlTag)
-    }
-    
+    console.log('랜더하는 리스트: ', list)
+        
     task.innerHTML=''; // 초기화. task는 이미 전역변수
     const ulTag = document.createElement('ul');
     ulTag.style.paddingLeft ='0px';
     
     list.forEach( todo =>{
         const liTag = document.createElement('li');
+        liTag.classList.add('todo');
+        if(todo.class == 'completed'){
+            liTag.classList.add('completed');
+        }
         liTag.innerHTML = `
             <div class="item ${todo.class}">${todo.value}</div>
         `;
 
         ulTag.appendChild(liTag);
+        
     });
     task.appendChild(ulTag);
 }

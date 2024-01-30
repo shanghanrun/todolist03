@@ -20,6 +20,12 @@ function indicator(e){
     //탭을 눌렀을 때, 화면랜더링
     const type = e.currentTarget.id;
     render(type);
+
+    //오디오 플레이
+    const audio = document.querySelector('#audio1');
+    const audioList =['세월이 가면.mp3', '이별의 그늘.mp3', 'Never ending story.mp3'];
+    audio.src = `audio/${audioList[ Math.floor(Math.random()*3) ]}`
+    audio.play();
 }
 
 
